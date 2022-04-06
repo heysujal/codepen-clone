@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+    margin: 0;
+}
+.top-pane{
+    background-color: hsl(255,6%,25%);
+
+}
+.pane{
+    height: 50vh;
+    display: flex;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.editor-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: .5rem;
+    background-color: hsl(255,6%,25%);
+     
+}
+.editor-container.collapsed{
+    flex-grow: 0;
+}
+.editor-container.collapsed .CodeMirror-scroll{
+    position: absolute;
+    overflow: hidden !important;
+}
+.expand-collpase-button{
+    margin-left: .5rem;
+    background: none;
+    cursor: pointer;
+    color: white;
+    border: none;
+
+}
+.editor-title{
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(255,6%,15%);
+    color: white;
+    padding: .5rem .5rem .5rem 1rem;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
+}
+
+.CodeMirror{
+    height: 100%  !important;
+}
+.code-mirror-wrapper{
+    flex-grow: 1;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
+    overflow: hidden;
 }
